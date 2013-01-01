@@ -45,7 +45,7 @@ uploadfile('nodes')
 -- REGISTER HOE
 --
 
-sxmfarming.register_hoe('wood', 'Woodden', 'default:wood', cwoodt, 10)
+sxmfarming.register_hoe('wood', 'Woodden', 'group:wood', cwoodt, 10)
 sxmfarming.register_hoe('stone', 'Stone', 'default:cobble', cstonet, 20)
 sxmfarming.register_hoe('steel', 'Steel', 'default:steel_ingot', csteelt, 30)
 sxmfarming.register_hoe('copper', 'Copper', 'default:copper__ingot', ccoppert, 25)

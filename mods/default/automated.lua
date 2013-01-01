@@ -52,7 +52,7 @@ tools.register_tools("mesite", "Mesite", cmesitet, 0.45, 60)
 -- Register Crafts Of Tools
 --
 
-crafttools.register_crafttools("wood", false)
+crafttools.register_crafttools_group("wood")
 crafttools.register_crafttools("stone", false, "cobble")
 crafttools.register_crafttools("steel")
 crafttools.register_crafttools("copper")

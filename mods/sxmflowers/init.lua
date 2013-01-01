@@ -68,6 +68,44 @@ function sxmflowers.register_flower(inref)
 			y_min = 1,
 			decoration = ref.modname..':flower_'..ref.subname
 		})
+	else
+		core.register_decoration({
+			name = ref.modname..':temperate_forest_flower_'..ref.subname,
+			deco_type = "simple",
+			place_on = {"default:dirt_with_grass"},
+			biomes = {"temperate_forest"},
+			sidelen = 16,
+			noise_params = {
+				offset = 0,
+				scale = 0.011,
+				spread = {x = 300, y = 300, z = 300},
+				seed = ref.seed,
+				octaves = 2,
+				persist = 0.1
+			},
+			y_max = 30,
+			y_min = 1,
+			decoration = ref.modname..':flower_'..ref.subname
+		})
+		
+		core.register_decoration({
+			name = ref.modname..':grasslands_flower_'..ref.subname,
+			deco_type = "simple",
+			place_on = {"default:dirt_with_grass"},
+			biomes = {"grasslands"},
+			sidelen = 16,
+			noise_params = {
+				offset = 0,
+				scale = 0.016,
+				spread = {x = 300, y = 300, z = 300},
+				seed = ref.seed,
+				octaves = 2,
+				persist = 0.1
+			},
+			y_max = 30,
+			y_min = 1,
+			decoration = ref.modname..':flower_'..ref.subname
+		})
 	end
 end
 

@@ -228,3 +228,43 @@ function crafttools.register_crafttools(subname, is_a_ingot, other_mat)
 		})
 	end
 end
+
+function crafttools.register_crafttools_group(subname)
+		minetest.register_craft({
+			output = 'default:pick_'..subname,
+			recipe = {
+				{'group:'..subname, 'group:'..subname, 'group:'..subname},
+				{'', 'default:stick', ''},
+				{'', 'default:stick', ''},
+			}
+		})
+
+		minetest.register_craft({
+			output = 'default:shovel_'..subname,
+			recipe = {
+				{'group:'..subname},
+				{'default:stick'},
+				{'default:stick'},
+			}
+		})
+
+
+		minetest.register_craft({
+			output = 'default:axe_'..subname,
+			recipe = {
+				{'group:'..subname, 'group:'..subname},
+				{'group:'..subname, 'default:stick'},
+				{'', 'default:stick'},
+			}
+		})
+
+
+		minetest.register_craft({
+			output = 'default:sword_'..subname,
+			recipe = {
+				{'group:'..subname},
+				{'group:'..subname},
+				{'default:stick'},
+			}
+		})
+end

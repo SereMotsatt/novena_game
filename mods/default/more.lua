@@ -245,6 +245,12 @@ dft.register_node('default:cutter', {
 			{0.5,0,-0.5,0.25,0.25,-0.25},
 		},
 	},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5,-0.5,-0.5,0.5,0.25,0.5},
+		},
+	},
 	sounds = default.node_sound_stone_defaults(),
 	on_construct = function(pos)
 			local meta = minetest.get_meta(pos)
@@ -337,17 +343,13 @@ core.register_abm({
 	end,
 })
 
-register_cutter('default:stone', 'default:stone_brick')
-register_cutter('default:stone', 'default:stone_smooth')
-register_cutter('default:stone', 'default:stone_pillar')
-register_cutter('default:stone', 'default:stone_pillar_edge')
-register_cutter('default:cobble', 'default:stone_brick')
-register_cutter('default:cobble', 'default:stone_smooth')
-register_cutter('default:apple_tree', 'default:wood 6')
+uploadfile("cutter_crafts")
+
 
 dft.register_node("default:fern", {
 	description = "Fern",
 	drawtype = "plantlike",
+	visual_scale = 2,
 	tiles = {"default_fern.png"},
 	inventory_image = "default_fern.png",
 	wield_image = "default_fern.png",
@@ -372,7 +374,7 @@ dft.register_node("default:oak_tree", {
 	description = "Oak tree",
 	tiles = {"default_oak_tree_top.png", "default_oak_tree_top.png", "default_oak_tree.png"},
 	is_ground_content = true,
-	groups = {snappy=2,choppy=2,oddly_breakable_by_hand=1},
+	groups = {tree=1,snappy=2,choppy=2,oddly_breakable_by_hand=1},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -384,7 +386,7 @@ dft.register_node("default:oak_leaves", {
 	paramtype = "light",
 	walkable = false,
 	move_resistance = 1,
-	groups = {snappy=3},
+	groups = {leaves=1,snappy=3},
 	sounds = default.node_sound_leaves_defaults(),
 	after_place_node = function(pos, placer, itemstack, pointed_thing)
 		local new_node = minetest.get_node(pos)
@@ -392,4 +394,64 @@ dft.register_node("default:oak_leaves", {
 		minetest.set_node(pos, new_node)
 		--minetest.remove_node(pos)
 	end,
+})
+
+
+dft.register_node("default:oak_wood", {
+	description = "Oak wood",
+	tiles = {"default_oak_wood.png"},
+	is_ground_content = true,
+	groups = {snappy=2,choppy=2,oddly_breakable_by_hand=2, wood=1},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+core.register_craft({
+	output = 'default:oak_wood 4',
+    recipe = {
+        {"default:oak_tree"},
+    }
+})
+
+-- Birch tree
+
+dft.register_node("default:birch_tree", {
+	description = "Birch tree",
+	tiles = {"default_birch_tree_top.png", "default_birch_tree_top.png", "default_birch_tree.png"},
+	is_ground_content = true,
+	groups = {tree=1,snappy=2,choppy=2,oddly_breakable_by_hand=1},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+
+dft.register_node("default:birch_leaves", {
+	description = "Birch leaves",
+	drawtype = "glasslike",
+	tiles = {"default_birch_leaves.png"},
+	paramtype = "light",
+	walkable = false,
+	move_resistance = 1,
+	groups = {leaves=1,snappy=3},
+	sounds = default.node_sound_leaves_defaults(),
+	after_place_node = function(pos, placer, itemstack, pointed_thing)
+		local new_node = minetest.get_node(pos)
+		new_node.param2 = 1
+		minetest.set_node(pos, new_node)
+		--minetest.remove_node(pos)
+	end,
+})
+
+dft.register_node("default:birch_wood", {
+	description = "Birch wood",
+	tiles = {"default_birch_wood.png"},
+	is_ground_content = true,
+	groups = {snappy=2,choppy=2,oddly_breakable_by_hand=2, wood=1},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+
+core.register_craft({
+	output = 'default:birch_wood 4',
+    recipe = {
+        {"default:birch_tree"},
+    }
 })

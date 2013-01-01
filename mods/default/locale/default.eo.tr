@@ -1,0 +1,119 @@
+# textdomain: default
+Wooden axe=Ligna hakilo
+Stone axe=Ŝtona hakilo
+Steel axe=Ŝtala hakilo
+Gold axe=Ora hakilo
+Copper axe=Kupra hakilo
+Damascus steel axe=Hacha de acero de damasco
+Mesite axe=Meŝia hakilo
+
+Wooden pickaxe=Ligna pioĉo 
+Stone pickaxe=Ŝtono pioĉo
+Steel pickaxe=Ŝtala pioĉo
+Gold pickaxe=Ora pioĉo
+Copper pickaxe=Kupra pioĉo
+Damascus steel pickaxe=Pico de acero de damasco
+Mesite pickaxe=Meŝia pioĉo
+
+Wooden sword=Ligna glavo
+Stone sword=Ŝtono glavo
+Steel sword=Ŝtala glavo
+Gold sword=Ora glavo
+Copper sword=Kupra galvo
+Damascus steel sword=Espada de acero de damasco
+Mesite sword=Meŝia glavo
+
+Wooden shovel=Ligna ŝovelilo
+Stone shovel=Ŝtona ŝovelilo
+Steel shovel=Ŝtala ŝovelilo
+Gold shovel=Ora ŝovelilo
+Copper shovel=Kupra ŝovelilo
+Damascus steel shovel=Pala de acero de damasco
+Mesite shovel=Meŝia ŝovelilo
+
+###MoreAutomateds###
+Steel block=Ŝtala bloko
+Gold block=Ora bloko
+Copper block=Kupra bloko
+Damascus steel block=Bloque de acero de damasco
+Mesite block=Meŝia Bloko
+
+Steel ingot=Lingote de acero
+Gold ingot=Ora orbriko
+Copper ingot=Kupra orbriko
+Damascus steel ingot=Lingote de acero de damasco
+Mesite ingot=Meŝia orbriko
+
+Steel nugget=Pepita de acero
+Gold nugget=Pepita de oro
+Copper nugget=Pepita de cobre
+Damascus steel nugget=Pepita de acero de damasco
+Mesite nugget=Pepita de Mesita
+
+
+###More###
+Apple=Pomo
+Book=Libro
+Dirt=Tero
+Dirt with grass=Tero kun pasto
+Dirt with snow=Tero kun neĝas
+Sand=Sablo
+Stone=Ŝtono
+Dirt with marshy grass=Tierra con pasto pantanoso
+Marshy dirt=Tierra pantanosa
+Bookshelf=Librejo
+Brick=Bloque de ladrillos
+Wood=Lignaj tabuloj
+Apple tree=Pormarbo
+Furnace=Forno
+Furnace active=Akiva forno
+Gravel=Grava
+Glass=Vitro
+Ladder=Escaleras de mano
+Apple leaves=Pormarbo folioj
+Papyrus=Caña
+Paper=Papel
+Sapling=Arbolito
+Torch=Torĉo
+Lump of clay=Pedazo de arcilla
+Lump of coal=Karbo bulo
+Lump of iron=Fero bulo
+Rail=Relo
+Stone with coal=Ŝtono kun karbo
+Stone with iron=Ŝtono kun fero
+Stone with copper=Ŝtono kun kupro
+Stone with mesite=Ŝtono kun meŝito
+Stone with gold=Ŝtono kun oro
+Chest=Kesto
+Locked chest=Cobre bloqueado
+Stick=Bastono
+Sign=Letrero
+Clay=Arcilla
+Wooden fence=Cerca de madera
+Sandstone=Arenisca
+Clay brick=Ladrillo
+
+
+###MoremorE###
+Stone smooth=Piedra suave
+Stone brick=Ladrillos de piedra
+Stone brick mossy=Ladrillos de piedra musgosos
+Stone pillar=Pilares de piedra
+Stone pillar edge=Bordes de pilares de piedra
+Cutter=Cortador
+Copper ladder=Escaleras de cobre de mano
+Copper ladder with mesite=Escaleras de cobre luminosas de mano
+Sheet steel=Laminas de acero
+Lantern=Farol
+Copper fence=Cerca de cobre
+Steel fence=Cerca de hierro
+Fern=Helecho
+Oak tree=Roblo arbo
+Oak leaves=Roblaj folioj
+Oak wood=Roblo lignaj tabuloj
+Birch tree=Tremolo
+Birch leaves=Tremolaj folioj
+Birch wood=Tremolo lignaj tabuloj
+Lump of copper=Kopro bulo
+Lump of gold=Oro bulo
+Lump of mesite=Meŝio bulo

@@ -87,6 +87,19 @@ stairs.register_stair_and_slab("wood", "default:wood",
 		{"default_wood.png"},
 		"Wooden stair",
 		"Wooden slab")
+		
+
+stairs.register_stair_and_slab("oak_wood", "default:oak_wood",
+		{snappy=2,choppy=2,oddly_breakable_by_hand=2},
+		{"default_oak_wood.png"},
+		"Oak wood stair",
+		"Oak wood slab")
+		
+stairs.register_stair_and_slab("birch_wood", "default:birch_wood",
+		{snappy=2,choppy=2,oddly_breakable_by_hand=2},
+		{"default_birch_wood.png"},
+		"Birch wood stair",
+		"Birch wood slab")
 
 stairs.register_stair_and_slab("stone", "default:stone",
 		{cracky=3},
@@ -149,3 +162,9 @@ register_cutter('default:cobble', 'stairs:stair_cobble')
 register_cutter('default:cobble', 'stairs:slab_cobble 2')
 register_cutter('default:wood', 'stairs:stair_wood')
 register_cutter('default:wood', 'stairs:slab_wood 2')
+register_cutter('default:oak_wood', 'stairs:stair_oak_wood')
+register_cutter('default:oak_wood', 'stairs:slab_oak_wood 2')
+register_cutter('default:birch_wood', 'stairs:stair_birch_wood')
+register_cutter('default:birch_wood', 'stairs:slab_birch_wood 2')
+register_cutter('default:sandstone', 'stairs:stair_sandstone')
+register_cutter('default:sandstone', 'stairs:slab_sandstone 2')

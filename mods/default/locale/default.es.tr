@@ -1,4 +1,10 @@
 # textdomain: default
+
+###Anteerrores###
+Furnace is empty=El horno está vacio
+Furnace out of fuel=EL horno se quedó sin combustible
+
+
 Wooden axe=Hacha de madera
 Stone axe=Hacha de piedra
 Steel axe=Hacha de acero
@@ -56,6 +62,7 @@ Apple=Manzana
 Book=Libro
 Dirt=Tierra
 Dirt with grass=Tierra con pasto
+Dirt with snow=Tierra con nieve
 Sand=Arena
 Stone=Piedra
 Dirt with marshy grass=Tierra con pasto pantanoso
@@ -65,6 +72,7 @@ Brick=Bloque de ladrillos
 Wood=Madera
 Apple tree=Manzano
 Furnace=Horno
+Furnace active=Horno activo
 Gravel=Grava
 Glass=Vidrio
 Ladder=Escaleras de mano
@@ -104,7 +112,14 @@ Copper ladder with mesite=Escaleras de cobre luminosas de mano
 Sheet steel=Laminas de acero
 Lantern=Farol
 Copper fence=Cerca de cobre
-Steel fence=Cerca de hierro
+Steel fence=Cerca de acero
 Fern=Helecho
 Oak tree=Árbol de roble
 Oak leaves=Hojas de roble
+Oak wood=Madera de roble
+Birch tree=Árbol de abedul
+Birch leaves=Hojas de abedul
+Birch wood=Madera de abedul
+Lump of copper=Pedazo de cobre
+Lump of gold=Pedazo de oro
+Lump of mesite=Pedazo de mesita

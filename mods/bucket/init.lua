@@ -1,10 +1,6 @@
 -- bucket (Minetest 0.4 mod)
 -- A bucket, which can pick up water and lava
 
-minetest.register_alias("bucket", "bucket:bucket_empty")
-minetest.register_alias("bucket_water", "bucket:bucket_water")
-minetest.register_alias("bucket_lava", "bucket:bucket_lava")
-
 minetest.register_craft({
 	output = 'bucket:bucket_empty 1',
 	recipe = {
@@ -55,7 +51,8 @@ function bucket.register_liquid(source, flowing, itemname, inventory_image)
 	end
 end
 
-minetest.register_craftitem("bucket:bucket_empty", {
+core.register_craftitem("bucket:bucket_empty", {
+	description = "Bucket empty",
 	inventory_image = "bucket.png",
 	stack_max = 1,
 	liquids_pointable = true,
@@ -68,7 +65,7 @@ minetest.register_craftitem("bucket:bucket_empty", {
 		n = minetest.get_node(pointed_thing.under)
 		liquiddef = bucket.liquids[n.name]
 		if liquiddef ~= nil and liquiddef.source == n.name and liquiddef.itemname ~= nil then
-			minetest.add_node(pointed_thing.under, {name="air"})
+			core.add_node(pointed_thing.under, {name="air"})
 			return {name=liquiddef.itemname}
 		end
 	end,

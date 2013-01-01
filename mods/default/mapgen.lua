@@ -64,6 +64,20 @@ minetest.register_ore({
 	y_max     = -1,
 })
 
+--
+-- Gravel generation
+--
+
+minetest.register_ore({
+	ore_type       = "blob",
+	ore            = "default:gravel",
+	wherein        = "default:stone",
+	clust_scarcity = 16*16*16,
+	clust_num_ores = 5,
+	clust_size     = 4,
+	y_min     = -31000,
+	y_max     = 200,
+})
 
 --
 -- Ore generation
@@ -199,7 +213,7 @@ core.register_biome({
 	node_filler = 'default:dirt',
 	depth_filler = 3,
     node_stone = "default:stone",
-	y_max = 200,
+	y_max = 114,
     y_min = 3,
     heat_point = 50,
     humidity_point = 50,
@@ -225,7 +239,7 @@ core.register_biome({
 	node_filler = 'default:dirt',
 	depth_filler = 3,
     node_stone = "default:stone",
-	y_max = 200,
+	y_max = 114,
     y_min = 3,
     heat_point = 30,
     humidity_point = 70,
@@ -273,6 +287,36 @@ core.register_biome({
     heat_point = 70,
 	weight = 2.0,
     humidity_point = 80,
+})
+
+core.register_biome({
+	name = 'desert',
+	node_top = 'default:sand',
+    depth_top = 2,
+	node_filler = 'default:sandstone',
+	depth_filler = 9,
+    node_stone = "default:stone",
+	y_max = 114,
+    y_min = -255,
+	vertical_blend = 8,
+    heat_point = 90,
+    humidity_point = 10,
+	vertical_blend = 8,
+})
+
+
+core.register_biome({
+	name = 'alpine_tundra',
+	node_top = 'default:dirt_with_snow',
+    depth_top = 1,
+	node_filler = 'default:dirt',
+	depth_filler = 2,
+    node_stone = "default:stone",
+	y_max = 400,
+    y_min = 115,
+    heat_point = 5,
+    humidity_point = 90,
+	vertical_blend = 8,
 })
 
 end
@@ -325,6 +369,31 @@ core.register_decoration({
     flags = "place_center_x, place_center_z",
     rotation = "random",
     schematic = "schematics/roble.mts",
+})
+
+
+core.register_decoration({
+	name = "default:birch_tree",
+	deco_type = "schematic",
+	place_on = "default:dirt_with_grass",
+    sidelen = 16,
+    fill_ratio = 0.02,
+    noise_params = {
+        offset = 0,
+        scale = 0.02,
+        spread = {x = 100, y = 100, z = 100},
+        seed = 852,
+        octaves = 2,
+        persistence = 0.7,
+        lacunarity = 2.0,
+        flags = "absvalue"
+    },
+    biomes = {"temperate_forest"},
+    y_min = 1,
+    y_max = 500,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    schematic = "schematics/tremolo.mts",
 })
 
 core.register_decoration({

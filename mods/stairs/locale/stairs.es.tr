@@ -1,5 +1,7 @@
 # textdomain: stairs
 Wooden stair=Escaleras de madera
+Oak wood stair=Escaleras de madera de roble
+Birch wood stair=Escaleras de madera de abedul
 Stone stair=Escaleras de piedra
 Stone smooth stair=Escaleras de piedra suave
 Stone brick stair=Escaleras de ladrillos de piedra
@@ -10,6 +12,8 @@ Brick stair=Escaleras de ladrillos
 Sandstone stair=Escaleras de arenisca
 
 Wooden slab=Losa de madera
+Oak wood slab=Losa de madera de roble
+Birch wood slab=Losa de madera de abedul
 Stone slab=Losa de piedra
 Stone smooth slab=Losa de piedra suave
 Stone brick slab=Losa de ladrillos de piedra

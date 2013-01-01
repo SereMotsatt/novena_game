@@ -39,19 +39,19 @@ dft.register_node("default:stone_with_copper", {
 	tiles = tex_s_copper,
 	is_ground_content = true,
 	groups = {cracky=2},
-	--drop = 'default:coper_lump',
+	drop = 'default:copper_lump',
 	sounds = default.node_sound_stone_defaults(),
 })
 
---dft.register_craftitem("default:iron_lump", {
---	description = "Lump of iron",
---	inventory_image = "default_iron_lump.png",
---})
+dft.register_craftitem("default:copper_lump", {
+	description = "Lump of copper",
+	inventory_image = "default_copper_lump.png",
+})
 
 minetest.register_craft({
 	type = "cooking",
 	output = "default:copper_ingot",
-	recipe = "default:stone_with_copper",
+	recipe = "default:copper_lump",
 })
 
 --
@@ -65,19 +65,19 @@ dft.register_node("default:stone_with_mesite", {
 	groups = {cracky=2},
 	paramtype = "light",
 	light_source = 2,
-	--drop = 'default:coper_lump',
+	drop = 'default:mesite_lump',
 	sounds = default.node_sound_stone_defaults(),
 })
 
---dft.register_craftitem("default:iron_lump", {
---	description = "Lump of iron",
---	inventory_image = "default_iron_lump.png",
---})
+dft.register_craftitem("default:mesite_lump", {
+	description = "Lump of mesite",
+	inventory_image = "default_mesite_lump.png",
+})
 
 minetest.register_craft({
 	type = "cooking",
 	output = "default:mesite_ingot",
-	recipe = "default:stone_with_mesite",
+	recipe = "default:mesite_lump",
 })
 
 --
@@ -89,17 +89,17 @@ dft.register_node("default:stone_with_gold", {
 	tiles = tex_s_gold,
 	is_ground_content = true,
 	groups = {cracky=2},
-	--drop = 'default:coper_lump',
+	drop = 'default:gold_lump',
 	sounds = default.node_sound_stone_defaults(),
 })
 
---dft.register_craftitem("default:iron_lump", {
---	description = "Lump of iron",
---	inventory_image = "default_iron_lump.png",
---})
+dft.register_craftitem("default:gold_lump", {
+	description = "Lump of gold",
+	inventory_image = "default_gold_lump.png",
+})
 
 minetest.register_craft({
 	type = "cooking",
 	output = "default:gold_ingot",
-	recipe = "default:stone_with_gold",
+	recipe = "default:gold_lump",
 })

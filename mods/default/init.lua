@@ -12,6 +12,10 @@ LIGHT_MAX = 14
 default = {}
 dft = {}
 
+-- Mi annadicion
+LA = core.get_translator --Lo mas innecesario que veras hoy :C
+L = LA('default')
+
 function dft.register_node(named, ref)
 	if ref.description ~= nil then
 		ref.description = L(ref.description)
@@ -32,11 +36,7 @@ minetest.register_alias("default:leaves", "default:apple_leaves")
 
 default.mg_get_name = core.get_mapgen_setting("mg_name")
 -- Stage (Alpha, Beta, Release), Big update, Small update, Very small update - Bugfix. 
-default.version = "0.0.4.11"
-
--- Mi annadicion
-LA = core.get_translator --Lo mas innecesario que veras hoy :C
-L = LA('default')
+default.version = "0.0.4.20"
 
 function uploadfile(filelua)
 	dofile(core.get_modpath(core.get_current_modname()).."/"..filelua..".lua")
@@ -99,7 +99,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:stick 4',
 	recipe = {
-		{'default:wood'},
+		{'group:wood'},
 	}
 })
 
@@ -114,8 +114,8 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:sign_wall',
 	recipe = {
-		{'default:wood', 'default:wood', 'default:wood'},
-		{'default:wood', 'default:wood', 'default:wood'},
+		{'group:wood', 'group:wood', 'group:wood'},
+		{'group:wood', 'group:wood', 'group:wood'},
 		{'', 'default:stick', ''},
 	}
 })
@@ -257,18 +257,18 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:chest',
 	recipe = {
-		{'default:wood', 'default:wood', 'default:wood'},
-		{'default:wood', '', 'default:wood'},
-		{'default:wood', 'default:wood', 'default:wood'},
+		{'group:wood', 'group:wood', 'group:wood'},
+		{'group:wood', '', 'group:wood'},
+		{'group:wood', 'group:wood', 'group:wood'},
 	}
 })
 
 minetest.register_craft({
 	output = 'default:chest_locked',
 	recipe = {
-		{'default:wood', 'default:wood', 'default:wood'},
-		{'default:wood', 'default:steel_ingot', 'default:wood'},
-		{'default:wood', 'default:wood', 'default:wood'},
+		{'group:wood', 'group:wood', 'group:wood'},
+		{'group:wood', 'default:steel_ingot', 'group:wood'},
+		{'group:wood', 'group:wood', 'group:wood'},
 	}
 })
 
@@ -333,9 +333,9 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:bookshelf',
 	recipe = {
-		{'default:wood', 'default:wood', 'default:wood'},
+		{'group:wood', 'group:wood', 'group:wood'},
 		{'default:book', 'default:book', 'default:book'},
-		{'default:wood', 'default:wood', 'default:wood'},
+		{'group:wood', 'group:wood', 'group:wood'},
 	}
 })
 
@@ -369,7 +369,7 @@ minetest.register_craft({
 minetest.register_craft({
 	type = "cooking",
 	output = "default:coal_lump",
-	recipe = "default:apple_tree",
+	recipe = "group:tree",
 })
 
 minetest.register_craft({
@@ -398,7 +398,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "fuel",
-	recipe = "default:apple_tree",
+	recipe = "group:tree",
 	burntime = 30,
 })
 
@@ -416,7 +416,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "fuel",
-	recipe = "default:apple_leaves",
+	recipe = "group:leaves",
 	burntime = 1,
 })
 
@@ -452,7 +452,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "fuel",
-	recipe = "default:wood",
+	recipe = "group:wood",
 	burntime = 7,
 })
 
@@ -562,6 +562,17 @@ dft.register_node("default:dirt_with_grass", {
 	}),
 })
 
+dft.register_node("default:dirt_with_snow", {
+	description = "Dirt with snow",
+	tiles ={"default_snow.png", "default_dirt.png", "default_dirt.png^default_grass_with_snow_side.png"},
+	is_ground_content = true,
+	groups = {crumbly=3, soil=1},
+	drop = 'default:dirt',
+	sounds = default.node_sound_dirt_defaults({
+		footstep = {name="default_footstep_grass_node", gain=0.5},
+	}),
+})
+
 dft.register_node("default:dirt_with_marshy_grass", {
 	description = "Dirt with marshy grass",
 	tiles ={"default_marshy_grass.png", "default_marshy_dirt.png", "default_marshy_dirt.png^default_marshy_grass_side.png"},
@@ -582,6 +593,14 @@ dft.register_node("default:dirt_with_grass_footsteps", {
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.4},
 	}),
+})
+
+dft.register_node("default:snow", {
+	description = "Snow",
+	tiles ={"default_snow.png"},
+	is_ground_content = true,
+	groups = {crumbly=3, soil=1},
+	sounds = default.node_sound_dirt_defaults(),
 })
 
 dft.register_node("default:dirt", {
@@ -1115,7 +1134,7 @@ dft.register_node("default:furnace", {
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)
 		meta:set_string("formspec", default.furnace_inactive_formspec)
-		meta:set_string("infotext", "Furnace")
+		meta:set_string("infotext", L("Furnace"))
 		local inv = meta:get_inventory()
 		inv:set_size("fuel", 1)
 		inv:set_size("src", 1)
@@ -1136,7 +1155,7 @@ dft.register_node("default:furnace", {
 })
 
 dft.register_node("default:furnace_active", {
-	description = "Furnace",
+	description = "Furnace active",
 	tiles ={"default_furnace_side.png", "default_furnace_side.png", "default_furnace_side.png",
 		"default_furnace_side.png", "default_furnace_side.png", "default_furnace_front_active.png"},
 	paramtype2 = "facedir",
@@ -1148,7 +1167,7 @@ dft.register_node("default:furnace_active", {
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)
 		meta:set_string("formspec", default.furnace_inactive_formspec)
-		meta:set_string("infotext", "Furnace");
+		meta:set_string("infotext", L("Furnace"));
 		local inv = meta:get_inventory()
 		inv:set_size("fuel", 1)
 		inv:set_size("src", 1)
@@ -1231,9 +1250,9 @@ minetest.register_abm({
 		end
 		
 		if meta:get_float("fuel_time") < meta:get_float("fuel_totaltime") then
-			local percent = math.floor(meta:get_float("fuel_time") /
-					meta:get_float("fuel_totaltime") * 100)
-			meta:set_string("infotext","Furnace active: "..percent.."%")
+			local percent = (math.floor(meta:get_float("fuel_time") /
+					meta:get_float("fuel_totaltime") * 100))
+			meta:set_string("infotext",L("Furnace active")..": "..100-percent.."%")
 			hacky_swap_node(pos,"default:furnace_active")
 			meta:set_string("formspec",
 				"size[8,9]"..
@@ -1259,7 +1278,7 @@ minetest.register_abm({
 		end
 
 		if fuel.time <= 0 then
-			meta:set_string("infotext","Furnace out of fuel")
+			meta:set_string("infotext",L("Furnace out of fuel"))
 			hacky_swap_node(pos,"default:furnace")
 			meta:set_string("formspec", default.furnace_inactive_formspec)
 			return
@@ -1267,7 +1286,7 @@ minetest.register_abm({
 
 		if cooked.item:is_empty() then
 			if was_active then
-				meta:set_string("infotext","Furnace is empty")
+				meta:set_string("infotext",L("Furnace is empty"))
 				hacky_swap_node(pos,"default:furnace")
 				meta:set_string("formspec", default.furnace_inactive_formspec)
 			end
