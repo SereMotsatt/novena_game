@@ -1,6 +1,10 @@
 # Novena Game (EN PROGRESO)
 Mi primer juego para luanti.
 
+## Aviso
+Actualmente no he añadido las 8 dimensiónes faltantes.
+
+
 ## Curiosidades
 ### ¿Porqué se llama "Novena"?
 Pienso hacer nueve dimensiónes completas.
@@ -14,16 +18,13 @@ Pues pensaba añadir jefes o para conseguir mejores recursos, etc. Todavia no ten
 Necesitas Descargarte Luanti (Anteriormente llamado Minetest).
 Descomprime luanti en tu lugar de preferencia.
 ### Paso 2
-Ve al ultimo lanzamiento de este repositorio y descargue la ultima version (Presione donde dice Source.zip).
+Ve al ultimo lanzamiento de este repositorio y descargue la ultima version (Presione donde dice Source code (zip)).
 ### Paso 3
-Copie el archivo descargado y vaya a donde descomprimión luanti y cree una carpeta llamda "games".
-Dentro de esa carpeta creará otra nueva llamada "novena_game" pegará el archivo descargado y lo descomprimirá.
+Copie el archivo descargado y vaya a donde descomprimión luanti y cree una carpeta llamada "games".
+Dentro de esa carpeta pegará el archivo descargado y lo descomprimirá.
 
-Tiene que quedar algo así (games/novena_game-master).
+Tiene que quedar algo así (games/novena_game-0.0.2-alpha).
+Ahora tendrá que renombrar la carpeta "novena_game-0.0.2-alpha" a "novena_game" y estará listo.
 
 ### Paso 4
 A disfrutarlo... o por lo menos probarlo, recuerde que este juego está en progreso.
-
-## Aviso
-Actualmente no he añadido las 8 dimensiónes faltantes.
-
