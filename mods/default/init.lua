@@ -11,6 +11,10 @@ LIGHT_MAX = 14
 -- Definitions made by this mod that other mods can use too
 default = {}
 
+-- Opcionales
+
+local sxmfarming_mod_exist = minetest.get_modpath('sxmfarming')
+
 -- Mi annadicion
 
 function uploadfile(filelua)
@@ -19,7 +23,7 @@ end
 
 -- Load other files
 uploadfile("sounds")
-uploadfile("oldmapgen")
+uploadfile("mapgen")
 uploadfile("automated")
 uploadfile("more")
 uploadfile("hand")
@@ -34,6 +38,11 @@ uploadfile("crafts")
 	minetest.after(2.0, cb, player)
 end)--]]
 
+
+minetest.register_on_joinplayer(function(player)
+	minetest.chat_send_player(player:get_player_name(), "Welcome to Novena Game, (WORK IN PROGRESS).")
+	minetest.chat_send_player(player:get_player_name(), "Novena Game v0.0.2-alpha")
+end)
 
 
 minetest.register_tool("default:pick_mese", {
@@ -533,6 +542,42 @@ minetest.register_node("default:dirt_with_grass", {
 	}),
 })
 
+if sxmfarming_mod_exist then
+
+	minetest.register_node("default:grass", {
+		description = "Grass",
+		drawtype = "plantlike",
+		tiles = {"default_grass_nb.png"},
+		paramtype = "light",
+		drop = {
+			max_items = 1,
+			items = {
+				{
+					items = {''},
+					rarity = 5,
+				},
+				{
+					items = {'sxmfarming:wheat_seed'},
+				}
+			}
+		},
+		walkable = false,
+		groups = {snappy=3,attached_node=1, not_in_creative_inventory = 1},
+		sounds = default.node_sound_leaves_defaults(),
+	})
+else
+	minetest.register_node("default:grass", {
+		description = "Grass",
+		drawtype = "plantlike",
+		tiles = {"default_grass_nb.png"},
+		paramtype = "light",
+		drop = '',
+		walkable = false,
+		groups = {snappy=3,attached_node=1, not_in_creative_inventory = 1},
+		sounds = default.node_sound_leaves_defaults(),
+	})
+end
+
 minetest.register_node("default:dirt_with_grass_footsteps", {
 	description = "Dirt with grass and footsteps",
 	tiles ={"default_grass_footsteps.png", "default_dirt.png", "default_dirt.png^default_grass_side.png"},
@@ -758,7 +803,7 @@ minetest.register_node("default:wood", {
 	description = "Wood",
 	tiles ={"default_wood.png"},
 	is_ground_content = true,
-	groups = {snappy=2,choppy=2,oddly_breakable_by_hand=2},
+	groups = {snappy=2,choppy=2,oddly_breakable_by_hand=2, wood=1},
 	sounds = default.node_sound_wood_defaults(),
 })
 

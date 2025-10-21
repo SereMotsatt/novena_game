@@ -23,6 +23,7 @@ minetest.register_node("sxmfarming:wet_farmland", {
 	}),
 })
 
+
 -- WHEAT CODE
 
 minetest.register_node("sxmfarming:wheat_1", {
@@ -32,6 +33,22 @@ minetest.register_node("sxmfarming:wheat_1", {
 	inventory_image = "sxmfarming_wheat_1.png",
 	wield_image = "sxmfarming_wheat_1.png",
 	paramtype = "light",
+	drop = {
+		max_items = 1,
+		items = {
+			{
+				items = {''},
+				rarity = 15,
+			},
+			{
+				items = {'sxmfarming:wheat_seed'},
+			}
+		}
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.5,-0.5,-0.5,0.5,0.07,0.5},
+	},
 	walkable = false,
 	groups = {snappy=3,attached_node=1, not_in_creative_inventory = 1},
 	sounds = default.node_sound_leaves_defaults(),
@@ -44,6 +61,22 @@ minetest.register_node("sxmfarming:wheat_2", {
 	inventory_image = "sxmfarming_wheat_2.png",
 	wield_image = "sxmfarming_wheat_2.png",
 	paramtype = "light",
+	drop = {
+		max_items = 1,
+		items = {
+			{
+				items = {''},
+				rarity = 15,
+			},
+			{
+				items = {'sxmfarming:wheat_seed'},
+			}
+		}
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.5,-0.5,-0.5,0.5,0.17,0.5},
+	},
 	walkable = false,
 	groups = {snappy=3,attached_node=1, not_in_creative_inventory = 1},
 	sounds = default.node_sound_leaves_defaults(),
@@ -56,6 +89,22 @@ minetest.register_node("sxmfarming:wheat_3", {
 	inventory_image = "sxmfarming_wheat_3.png",
 	wield_image = "sxmfarming_wheat_3.png",
 	paramtype = "light",
+	drop = {
+		max_items = 1,
+		items = {
+			{
+				items = {''},
+				rarity = 15,
+			},
+			{
+				items = {'sxmfarming:wheat_seed'},
+			}
+		}
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.5,-0.5,-0.5,0.5,0.27,0.5},
+	},
 	walkable = false,
 	groups = {snappy=3,attached_node=1, not_in_creative_inventory = 1},
 	sounds = default.node_sound_leaves_defaults(),

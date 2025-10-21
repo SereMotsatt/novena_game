@@ -27,6 +27,17 @@ minetest.register_craftitem("sxmfarming:wheat_seed", {
 })
 
 
+--
+-- REGISTER FOOD
+--
+
+minetest.register_craftitem("sxmfarming:bread", {
+	description = "Bread",
+	inventory_image = "sxmfarming_bread.png",
+	on_use = minetest.item_eat(5),
+})
+
+
 uploadfile('nodes')
 
 
@@ -34,11 +45,23 @@ uploadfile('nodes')
 -- REGISTER HOE
 --
 
-sxmfarming.register_hoe('wood', 'Woodden', cwoodt, 10)
-sxmfarming.register_hoe('stone', 'Stone', cstonet, 10)
-sxmfarming.register_hoe('steel', 'Steel', csteelt, 10)
-sxmfarming.register_hoe('copper', 'Copper', ccoppert, 10)
-sxmfarming.register_hoe('gold', 'Gold', cgoldt, 10)
-sxmfarming.register_hoe('mesite', 'Mesite', cmesitet, 10)
+sxmfarming.register_hoe('wood', 'Woodden', 'default:wood', cwoodt, 10)
+sxmfarming.register_hoe('stone', 'Stone', 'default:cobble', cstonet, 17)
+sxmfarming.register_hoe('steel', 'Steel', 'default:steel_ingot', csteelt, 25)
+sxmfarming.register_hoe('copper', 'Copper', 'default:copper__ingot', ccoppert, 20)
+sxmfarming.register_hoe('gold', 'Gold', 'default:gold_ingot', cgoldt, 15)
+-- Me Falta La Azada De Damasco
+sxmfarming.register_hoe('mesite', 'Mesite', 'default:mesite_ingot', cmesitet, 35)
 
 uploadfile('abm')
+
+--
+-- REGISTER CRAFT
+--
+
+minetest.register_craft({
+	output = 'sxmfarming:bread',
+	recipe = {
+		{'sxmfarming:wheat', 'sxmfarming:wheat', 'sxmfarming:wheat'},
+	}
+})

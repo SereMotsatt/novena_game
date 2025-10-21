@@ -23,7 +23,10 @@ function sxmfarming.farming_abm_node_from_to(name1, name2)
 		chance = 2,
 		nodenames = {name1},
 		action = function(pos, node)
-			minetest.set_node(pos, minetest.registered_nodes[name2])
+			local down = {x=pos.x, y=pos.y-1, z=pos.z}
+			if minetest.get_node(down).name == 'sxmfarming:wet_farmland' then
+				minetest.set_node(pos, minetest.registered_nodes[name2])
+			end
 		end,
 	})
 
@@ -34,12 +37,13 @@ end
 -- FARMING Helpers
 --
 
-local function hoe_place(itemstack, user, pointed_thing)
+local function hoe_place(itemstack, user, pointed_thing, uses)
 	if pointed_thing.type ~= 'node' then return itemstack end
 	local pt_pos = pointed_thing.under
 	local pt_name = minetest.get_node(pt_pos).name
 	if pt_name == 'default:dirt' or pt_name == 'default:dirt_with_grass' then
 		minetest.set_node(pt_pos, minetest.registered_nodes['sxmfarming:dry_farmland'])
+		itemstack:add_wear_by_uses(uses)
 	end
 	return itemstack
 end
@@ -56,7 +60,7 @@ function sxmfarming.seed_place(itemstack, user, pointed_thing, node_to_place)
 	return itemstack
 end
 
-function sxmfarming.register_hoe(subname, name, hsl, uses, add_image)
+function sxmfarming.register_hoe(subname, name, recipe_item, hsl, uses, add_image)
 	if add_image == nil then add_image = '' else add_image = '^[mask:'..add_image end
 	minetest.register_tool("sxmfarming:hoe_"..subname, {
 		description = name .. " hoe",
@@ -65,7 +69,15 @@ function sxmfarming.register_hoe(subname, name, hsl, uses, add_image)
 			max_drop_level=0,
 		},
 		on_place = function(itemstack, user, pointed_thing)
-			return hoe_place(itemstack, user, pointed_thing)
+			return hoe_place(itemstack, user, pointed_thing, uses)
 		end,
+	})
+	minetest.register_craft({
+		output = 'sxmfarming:hoe_'..subname,
+		recipe = {
+			{recipe_item, recipe_item, ''},
+			{'', 'default:stick', ''},
+			{'', 'default:stick', ''},
+		}
 	})
 end
