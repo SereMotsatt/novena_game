@@ -1,0 +1,23 @@
+Texturas - Crear(Remplazar)
+
+Hacer texturas de 16x
+Que sean similar a las de repixture (Por lo menos en su estilo)
+Ignorar lo de repixture, se intento mantener la idea de hacerlo así, sin embargo, las texturas han tomado otro camino, es una pena pero esta bien
+
+-- Documenteishon XDDD
+
+Ver Grafica_para_añadir_objetos.txt
+
+el juego tiene que ser "Sencillo" y sobre todo entretenido
+tiene que tener una escala de niveles segun cuanto tiempo le dediques al juego (Claro si consigues los recursos)
+
+
+-- Por hacer
+
+Me falta hacer menu de recipientes
+
+Los paneles presentan errores de optimizacón y errores visuales
+
+Mejorar la funcion de los slabs
+
+-- Mañana

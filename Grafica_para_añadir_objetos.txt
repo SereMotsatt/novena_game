@@ -1,0 +1,22 @@
+
+Inicio:
+ El inicio sera el material que se consigue de manera natural
+ ejemplos: Mineral de Cobre, Madera, etc
+
+Medios:
+ Son los procedimientos que tienen un material para transformarlo en otra cosa
+ ejemplo: Con el lingote de cobre puedes crear bloques de cobre, herramientas de cobre, escaleras de cobres, etc
+
+Final:
+ Es el final de todos los procedimientos del material, no hay vuelta atras
+ ejemplo: herramientas, etc
+
+
+
+
+
+Inicio -> Medio1 -> Medio2 <--> Medio3 -> Final
+	  |	    |	      | 
+       -> Medio1 -> Medio2 <--> Medio3 -> Medio4 -> Final
+	  |	    |
+       -> Medio1 -> Medio2 <--> Final
