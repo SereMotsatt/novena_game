@@ -24,6 +24,22 @@ minetest.register_alias("mapgen_mese", "default:mese")
 minetest.register_alias("mapgen_stair_cobble", "stairs:stair_cobble")
 
 --
+-- CLAY generation
+--
+
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "default:clay",
+	wherein        = "default:sand",
+	clust_scarcity = 8*8*8,
+	clust_num_ores = 5,
+	clust_size     = 3,
+	y_min     = -100,
+	y_max     = 64,
+})
+
+
+--
 -- Ore generation
 --
 
@@ -144,7 +160,9 @@ minetest.register_ore({
 	y_max     = 31000,
 })
 
+--[[
 minetest.register_on_generated(function(minp, maxp, seed)
+
 	-- Generate clay
 	if maxp.y >= 2 and minp.y <= 0 then
 		-- Assume X and Z lengths are equal
@@ -182,5 +200,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
 		end
 		end
 	end
+	
 end)
 
+--]]

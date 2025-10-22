@@ -10,10 +10,8 @@ LIGHT_MAX = 14
 
 -- Definitions made by this mod that other mods can use too
 default = {}
-
--- Opcionales
-
-local sxmfarming_mod_exist = minetest.get_modpath('sxmfarming')
+-- Stage (Alpha, Beta, Release), Big update, Small update, Bugfix. 
+default.version = "0.0.2.1"
 
 -- Mi annadicion
 
@@ -41,7 +39,7 @@ end)--]]
 
 minetest.register_on_joinplayer(function(player)
 	minetest.chat_send_player(player:get_player_name(), "Welcome to Novena Game, (WORK IN PROGRESS).")
-	minetest.chat_send_player(player:get_player_name(), "Novena Game v0.0.2-alpha")
+	minetest.chat_send_player(player:get_player_name(), "Novena Game v"..default.version)
 end)
 
 
@@ -541,42 +539,6 @@ minetest.register_node("default:dirt_with_grass", {
 		footstep = {name="default_grass_footstep", gain=0.4},
 	}),
 })
-
-if sxmfarming_mod_exist then
-
-	minetest.register_node("default:grass", {
-		description = "Grass",
-		drawtype = "plantlike",
-		tiles = {"default_grass_nb.png"},
-		paramtype = "light",
-		drop = {
-			max_items = 1,
-			items = {
-				{
-					items = {''},
-					rarity = 5,
-				},
-				{
-					items = {'sxmfarming:wheat_seed'},
-				}
-			}
-		},
-		walkable = false,
-		groups = {snappy=3,attached_node=1, not_in_creative_inventory = 1},
-		sounds = default.node_sound_leaves_defaults(),
-	})
-else
-	minetest.register_node("default:grass", {
-		description = "Grass",
-		drawtype = "plantlike",
-		tiles = {"default_grass_nb.png"},
-		paramtype = "light",
-		drop = '',
-		walkable = false,
-		groups = {snappy=3,attached_node=1, not_in_creative_inventory = 1},
-		sounds = default.node_sound_leaves_defaults(),
-	})
-end
 
 minetest.register_node("default:dirt_with_grass_footsteps", {
 	description = "Dirt with grass and footsteps",
