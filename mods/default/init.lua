@@ -536,7 +536,7 @@ minetest.register_node("default:dirt_with_grass", {
 	groups = {crumbly=3, soil=1},
 	drop = 'default:dirt',
 	sounds = default.node_sound_dirt_defaults({
-		footstep = {name="default_grass_footstep", gain=0.4},
+		footstep = {name="default_footstep_grass_node", gain=0.5},
 	}),
 })
 
