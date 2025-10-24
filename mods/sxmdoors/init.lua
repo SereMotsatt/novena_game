@@ -4,11 +4,12 @@
 --
 
 sxmdoors = {}
-sxmdoors.all_reg_doors = {} 
+--sxmdoors.all_reg_doors = {} 
 
 -- Helpers
 
-local sayall = core.chat_send_all
+sxmGN = core.get_node
+sxmGIG = core.get_item_group
 
 core.register_node("sxmdoors:invi_node", {
 	--description = "Door test",
@@ -27,7 +28,9 @@ uploadfile('api')
 
 
 
-sxmdoors.register_door('sxmdoors', 'door_wood', 'Woodden door', 'default_wood.png','group:wood')
+sxmdoors.register_door('sxmdoors', 'door_wood', 'Woodden door', 'sxmdoors_door_wood.png','group:wood')
+sxmdoors.register_door('sxmdoors', 'door_gold', 'Gold door', 'sxmdoors_door_gold.png','default:gold_ingot')
+sxmdoors.register_door('sxmdoors', 'door_steel', 'Steel door', 'sxmdoors_door_steel.png','default:steel_ingot')
 
 -- FINAL Helpers
 
@@ -35,9 +38,7 @@ core.register_on_dignode(function(pos, oldnode, digger)
 	local node_name = oldnode.name
 	local pos_up = {x=pos.x, y=pos.y+1, z=pos.z}
 	check_is_door = core.get_node(pos_up).name
-	for i in pairs(sxmdoors.all_reg_doors) do
-		if check_is_door == sxmdoors.all_reg_doors[i] then
-			core.dig_node(pos_up)
-		end
+	if sxmGIG(check_is_door, 'door') > 0 then
+		core.dig_node(pos_up)
 	end
 end)
