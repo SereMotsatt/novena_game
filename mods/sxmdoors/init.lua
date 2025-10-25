@@ -28,9 +28,9 @@ uploadfile('api')
 
 
 
-sxmdoors.register_door('sxmdoors', 'door_wood', 'Woodden door', 'sxmdoors_door_wood.png','group:wood')
-sxmdoors.register_door('sxmdoors', 'door_gold', 'Gold door', 'sxmdoors_door_gold.png','default:gold_ingot')
-sxmdoors.register_door('sxmdoors', 'door_steel', 'Steel door', 'sxmdoors_door_steel.png','default:steel_ingot')
+sxmdoors.register_door('sxmdoors', 'door_wood', 'Woodden door', 'sxmdoors_door_wood.png', 'sxmdoors_door_wood_item.png','group:wood')
+sxmdoors.register_door('sxmdoors', 'door_gold', 'Gold door', 'sxmdoors_door_gold.png', 'sxmdoors_door_gold_item.png','default:gold_ingot')
+sxmdoors.register_door('sxmdoors', 'door_steel', 'Steel door', 'sxmdoors_door_steel.png', 'sxmdoors_door_steel_item.png','default:steel_ingot')
 
 -- FINAL Helpers
 

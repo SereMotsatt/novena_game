@@ -17,7 +17,7 @@ local function check_in_neighbors_door(pos)
 end
 
 
-function sxmdoors.register_door(modname, subname, description, image, trecipe)
+function sxmdoors.register_door(modname, subname, description, image, imageitem, trecipe)
 
 	-- Doors NODES
 	
@@ -41,7 +41,7 @@ function sxmdoors.register_door(modname, subname, description, image, trecipe)
 				{items = {modname..":"..subname.."_item"} },
 			}
 		},
-		groups = {snappy=3,door=1,invert=0},
+		groups = {snappy=3,door=1,invert=0, not_in_creative_inventory = 1},
 		--sounds = default.node_sound_leaves_defaults(),
 		on_construct = function(pos)
 			local invisible_node = core.registered_nodes['sxmdoors:invi_node']
@@ -81,7 +81,7 @@ function sxmdoors.register_door(modname, subname, description, image, trecipe)
 				{items = {modname..":"..subname.."_item"} },
 			}
 		},
-		groups = {snappy=3,door=1,invert=1},
+		groups = {snappy=3,door=1,invert=1, not_in_creative_inventory = 1},
 		--sounds = default.node_sound_leaves_defaults(),
 		on_construct = function(pos)
 			local invisible_node = core.registered_nodes['sxmdoors:invi_node']
@@ -120,7 +120,7 @@ function sxmdoors.register_door(modname, subname, description, image, trecipe)
 			}
 		},
 		mesh = 'sxmdoors_ao.obj',
-		groups = {snappy=3,door=1,invert=0},
+		groups = {snappy=3,door=1,invert=0, not_in_creative_inventory = 1},
 		--sounds = default.node_sound_leaves_defaults(),
 		on_construct = function(pos)
 			local invisible_node = core.registered_nodes['sxmdoors:invi_node']
@@ -161,7 +161,7 @@ function sxmdoors.register_door(modname, subname, description, image, trecipe)
 				{items = {modname..":"..subname.."_item"} },
 			}
 		},
-		groups = {snappy=3,door=1,invert=1},
+		groups = {snappy=3,door=1,invert=1, not_in_creative_inventory = 1},
 		--sounds = default.node_sound_leaves_defaults(),
 		on_construct = function(pos)
 			local invisible_node = core.registered_nodes['sxmdoors:invi_node']
@@ -186,7 +186,7 @@ function sxmdoors.register_door(modname, subname, description, image, trecipe)
 
 	core.register_craftitem(modname..":"..subname.."_item", {
 		description = description,
-		inventory_image = "default_cloud.png",
+		inventory_image = imageitem,
 		on_place = function(itemstack, placer, pointed_thing)
 		
 			local pt = pointed_thing

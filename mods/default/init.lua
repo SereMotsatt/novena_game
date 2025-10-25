@@ -38,6 +38,13 @@ end)--]]
 
 
 minetest.register_on_joinplayer(function(player)
+	player:set_lighting({
+		saturation=1.2,
+		shadows={intensity=0.5, tint={r=0,g=0,b=0.3}},
+		volumetric_light={strength=0.2},
+		exposure={exposure_correction=1.0,luminance_min=-5.0,luminance_max=-2.0,speed_dark_bright=100.0,speed_bright_dark=20.0},
+		bloom={intensity=0.16, strength_factor=0.2}
+		})
 	minetest.chat_send_player(player:get_player_name(), "Welcome to Novena Game, (WORK IN PROGRESS).")
 	minetest.chat_send_player(player:get_player_name(), "Novena Game v"..default.version)
 end)
@@ -789,6 +796,7 @@ minetest.register_node("default:water_flowing", {
 	inventory_image = minetest.inventorycube("default_water.png"),
 	drawtype = "flowingliquid",
 	tiles ={"default_water.png"},
+	use_texture_alpha = 'blend',
 	special_tiles = {
 		{name="default_water.png", backface_culling=false},
 		{name="default_water.png", backface_culling=true},
@@ -813,6 +821,7 @@ minetest.register_node("default:water_source", {
 	inventory_image = minetest.inventorycube("default_water.png"),
 	drawtype = "liquid",
 	tiles ={"default_water.png"},
+	use_texture_alpha = 'blend',
 	special_tiles = {
 		-- New-style water source material (mostly unused)
 		{name="default_water.png", backface_culling=false},
