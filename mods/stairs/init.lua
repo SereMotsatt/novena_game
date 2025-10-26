@@ -100,6 +100,24 @@ stairs.register_stair_and_slab("cobble", "default:cobble",
 		"Cobble stair",
 		"Cobble slab")
 		
+stairs.register_stair_and_slab("stone_smooth", "default:stone_smooth",
+		{cracky=3},
+		{"default_stone_smooth.png"},
+		"Stone smooth stair",
+		"Stone smooth slab")
+		
+stairs.register_stair_and_slab("stone_brick", "default:stone_brick",
+		{cracky=3},
+		{"default_stone_brick.png"},
+		"Stone brick stair",
+		"Stone brick slab")
+		
+stairs.register_stair_and_slab("stone_brick_mossy", "default:stone_brick_mossy",
+		{cracky=3},
+		{"default_stone_brick_mossy.png"},
+		"Stone brick mossy stair",
+		"Stone brick mossy slab")
+		
 stairs.register_stair_and_slab("copper", "default:copper_block",
 		{cracky=2},
 		{default.blockauto..'^[hsl'..ccoppert, default.blockauto..'^[hsl'..ccoppert ,default.blockauto_side..'^[hsl'..ccoppert},
@@ -124,3 +142,10 @@ stairs.register_stair_and_slab("sandstone", "default:sandstone",
 		{"default_sandstone.png"},
 		"Sandstone stair",
 		"Sandstone slab")
+
+register_cutter('default:stone', 'stairs:stair_stone')
+register_cutter('default:stone', 'stairs:slab_stone 2')
+register_cutter('default:cobble', 'stairs:stair_cobble')
+register_cutter('default:cobble', 'stairs:slab_cobble 2')
+register_cutter('default:wood', 'stairs:stair_wood')
+register_cutter('default:wood', 'stairs:slab_wood 2')

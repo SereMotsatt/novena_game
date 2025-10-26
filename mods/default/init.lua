@@ -11,12 +11,12 @@ LIGHT_MAX = 14
 -- Definitions made by this mod that other mods can use too
 default = {}
 -- Stage (Alpha, Beta, Release), Big update, Small update, Bugfix. 
-default.version = "0.0.2.1"
+default.version = "0.0.3.0"
 
 -- Mi annadicion
 
 function uploadfile(filelua)
-	dofile(minetest.get_modpath(minetest.get_current_modname()).."/"..filelua..".lua")
+	dofile(core.get_modpath(core.get_current_modname()).."/"..filelua..".lua")
 end
 
 -- Load other files
@@ -44,9 +44,21 @@ minetest.register_on_joinplayer(function(player)
 		volumetric_light={strength=0.2},
 		exposure={exposure_correction=1.0,luminance_min=-5.0,luminance_max=-2.0,speed_dark_bright=100.0,speed_bright_dark=20.0},
 		bloom={intensity=0.16, strength_factor=0.2}
-		})
+	})
 	minetest.chat_send_player(player:get_player_name(), "Welcome to Novena Game, (WORK IN PROGRESS).")
 	minetest.chat_send_player(player:get_player_name(), "Novena Game v"..default.version)
+end)
+
+core.register_on_dieplayer(function(player, reason)
+	if player:get_pos() == nil then return end
+	inv = player:get_inventory()
+	maininv = inv:get_list("main")
+	for i, stack in ipairs(maininv) do
+		if not stack:is_empty() then
+			core.add_item(player:get_pos(), stack)
+		end
+	end
+	inv:set_list("main", {})
 end)
 
 
@@ -704,12 +716,11 @@ minetest.register_node("default:bookshelf", {
 
 minetest.register_node("default:glass", {
 	description = "Glass",
-	drawtype = "glasslike",
-	tiles ={"default_glass.png"},
-	inventory_image = minetest.inventorycube("default_glass.png"),
+	drawtype = "glasslike_framed_optional",
+	tiles ={"default_glass.png", "default_glass_framed.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
-	is_ground_content = true,
+	is_ground_content = false,
 	groups = {snappy=2,cracky=3,oddly_breakable_by_hand=3},
 	sounds = default.node_sound_glass_defaults(),
 })

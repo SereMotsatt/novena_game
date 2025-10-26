@@ -3,6 +3,7 @@ Mi primer juego para luanti.
 
 ## Aviso
 Actualmente no he añadido las 8 dimensiónes faltantes.
+Por los momentos solo funciona en el Mapgen V6
 
 
 ## Curiosidades
