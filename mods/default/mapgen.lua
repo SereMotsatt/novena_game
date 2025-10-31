@@ -23,19 +23,45 @@ minetest.register_alias("mapgen_stone_with_iron", "default:stone_with_iron")
 minetest.register_alias("mapgen_mese", "default:mese")
 minetest.register_alias("mapgen_stair_cobble", "stairs:stair_cobble")
 
+
+
+if default.mg_get_name == "v6" then
+		core.register_decoration({
+			name = "default:papyrus",
+			deco_type = "simple",
+			place_on = {"default:dirt_with_grass", "default:sand"},
+			sidelen = 16,
+			noise_params = {
+				offset = 0,
+				scale = 0.056,
+				spread = {x = 300, y = 300, z = 300},
+				seed = 2519,
+				octaves = 2,
+				persist = 0.1
+			},
+			y_max = 4,
+			y_min = 1,
+			spawn_by = "default:water_source",
+			num_spawn_by = 1,
+			height_max = 4,
+			decoration = "default:papyrus",
+		})
+end
+
+
 --
--- CLAY generation
+-- Clay generation
 --
 
 minetest.register_ore({
-	ore_type       = "scatter",
+	ore_type       = "blob",
 	ore            = "default:clay",
 	wherein        = "default:sand",
 	clust_scarcity = 8*8*8,
 	clust_num_ores = 5,
 	clust_size     = 3,
 	y_min     = -100,
-	y_max     = 64,
+	y_max     = -1,
 })
 
 
@@ -160,8 +186,69 @@ minetest.register_ore({
 	y_max     = 31000,
 })
 
+--
+-- No para mg v6
+--
 
+core.register_biome({
+	name = 'grasslands',
+	node_top = 'default:dirt_with_grass',
+    depth_top = 1,
+	node_filler = 'default:dirt',
+	depth_filler = 3,
+    node_stone = "default:stone",
+	y_max = 200,
+    y_min = 3,
+    heat_point = 50,
+    humidity_point = 50,
+})
 
+core.register_biome({
+	name = 'grasslands_ocean',
+	node_top = 'default:sand',
+    depth_top = 1,
+	node_filler = 'default:sand',
+	depth_filler = 2,
+    node_stone = "default:stone",
+	y_max = 2,
+    y_min = -100,
+    heat_point = 50,
+	weight = 1.0,
+    humidity_point = 50,
+})
+
+--Rediseñar esto
+if default.mg_get_name ~= "v6" then
+core.register_biome({
+	name = 'swamp',
+	node_top = 'default:dirt_with_marshy_grass',
+    depth_top = 1,
+	node_filler = 'default:marshy_dirt',
+	depth_filler = 3,
+    node_stone = "default:stone",
+	y_max = 32,
+	vertical_blend = 8,
+    y_min = 1,
+    heat_point = 70,
+	weight = 2.0,
+    humidity_point = 80,
+})
+
+core.register_biome({
+	name = 'swamp_ocean',
+	node_top = 'default:marshy_dirt',
+    depth_top = 1,
+	node_filler = 'default:marshy_dirt',
+	depth_filler = 2,
+    node_stone = "default:stone",
+	y_max = 0,
+    y_min = -100,
+    heat_point = 70,
+	weight = 2.0,
+    humidity_point = 80,
+})
+
+end
 --[[
 minetest.register_on_generated(function(minp, maxp, seed)
 

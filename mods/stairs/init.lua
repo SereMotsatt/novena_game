@@ -1,5 +1,5 @@
 stairs = {}
-
+local ll = LA('stairs')
 -- Node will be called stairs:stair_<subname>
 function stairs.register_stair(subname, recipeitem, groups, images, description, modname)
 	modname = modname or 'stairs'
@@ -78,8 +78,8 @@ end
 
 -- Nodes will be called stairs:{stair,slab}_<subname>
 function stairs.register_stair_and_slab(subname, recipeitem, groups, images, desc_stair, desc_slab, modname)
-	stairs.register_stair(subname, recipeitem, groups, images, desc_stair, modname)
-	stairs.register_slab(subname, recipeitem, groups, images, desc_slab, modname)
+	stairs.register_stair(subname, recipeitem, groups, images, ll(desc_stair), modname)
+	stairs.register_slab(subname, recipeitem, groups, images, ll(desc_slab), modname)
 end
 
 stairs.register_stair_and_slab("wood", "default:wood",

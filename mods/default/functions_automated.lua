@@ -8,8 +8,8 @@ function materials.register_material(modname, subname, description, hsl, add_ima
 	--if add_image == nil then add_image = '' else add_image = '^[mask:'..add_image end
 	if add_image == nil then add_image = '' else add_image = '^'..add_image end
 
-	minetest.register_node(modname..":"..subname.."_block", {
-		description = description .. " Block",
+	core.register_node(modname..":"..subname.."_block", {
+		description = L(description .. " block"),
 		tiles = {'default_blockauto_base.png^[hsl'..hsl..add_image},
 		is_ground_content = true,
 		--groups = {snappy=1,bendy=2},
@@ -20,32 +20,32 @@ function materials.register_material(modname, subname, description, hsl, add_ima
 	})
 	
 	if only_block == nil or only_block == false then
-		minetest.register_craftitem(modname..":"..subname.."_ingot", {
-			description = description .. " Ingot",
+		core.register_craftitem(modname..":"..subname.."_ingot", {
+			description = L(description .. " ingot"),
 			inventory_image = "default_ingot_base.png^[hsl"..hsl..add_image,
 		})
 		
 		
-		minetest.register_craftitem(modname..":"..subname.."_nugget", {
-			description = description .. " Nugget",
+		core.register_craftitem(modname..":"..subname.."_nugget", {
+			description = L(description .. " nugget"),
 			inventory_image = "default_nugget_base.png^[hsl"..hsl..add_image,
 		})
 		
-		minetest.register_craft({
+		core.register_craft({
 			output = modname..":"..subname.."_nugget 9",
 			recipe = {
 				{modname..":"..subname.."_ingot"},
 			}
 		})
 		
-		minetest.register_craft({
+		core.register_craft({
 			output = modname..":"..subname.."_ingot 9",
 			recipe = {
 				{modname..":"..subname.."_block"},
 			}
 		})
 		
-		minetest.register_craft({
+		core.register_craft({
 			output = modname..":"..subname.."_ingot",
 			recipe = {
 				{modname..":"..subname.."_nugget", modname..":"..subname.."_nugget", modname..":"..subname.."_nugget"},
@@ -54,7 +54,7 @@ function materials.register_material(modname, subname, description, hsl, add_ima
 			}
 		})
 
-		minetest.register_craft({
+		core.register_craft({
 			output = modname..":"..subname.."_block",
 			recipe = {
 				{modname..":"..subname.."_ingot", modname..":"..subname.."_ingot", modname..":"..subname.."_ingot"},
@@ -75,7 +75,7 @@ function tools.register_tools(subname, description, hsl, timest, uses, add_image
 	time3 = (basetime/2.00)+0.10 -- Aprox XD
 	
 	minetest.register_tool("default:axe_" .. subname, {
-		description = description .. " Axe",
+		description = L(description .. " axe"),
 		inventory_image = "default_tool_base.png^(default_tool_axe_base.png^[hsl"..hsl..add_image..")",
 		tool_capabilities = {
 			max_drop_level=0,
@@ -93,7 +93,7 @@ function tools.register_tools(subname, description, hsl, timest, uses, add_image
 	time3 = (basetime/2.00)+0.10 -- Aprox XD
 	
 	minetest.register_tool("default:pick_" .. subname, {
-		description = description .. " Pickaxe",
+		description = L(description .. " pickaxe"),
 		inventory_image = "default_tool_base.png^(default_tool_pick_base.png^[hsl"..hsl..add_image..")",
 		tool_capabilities = {
 			max_drop_level=0,
@@ -104,7 +104,7 @@ function tools.register_tools(subname, description, hsl, timest, uses, add_image
 	})
 	-- Shovel
 	minetest.register_tool("default:shovel_" .. subname, {
-		description = description .. " Shovel",
+		description = L(description .. " shovel"),
 		inventory_image = "default_tool_base.png^(default_tool_shovel_base.png^[hsl"..hsl..add_image..")",
 		tool_capabilities = {
 			max_drop_level=0,
@@ -121,7 +121,7 @@ function tools.register_tools(subname, description, hsl, timest, uses, add_image
 	time3 = (basetime/2.00)+0.10 -- Aprox XD
 	
 	minetest.register_tool("default:sword_" .. subname, {
-		description = description .. " Sword",
+		description = L(description .. " sword"),
 		inventory_image = "default_tool_sword_base.png^(default_tool_sword_top.png^[hsl"..hsl..add_image..")",
 		tool_capabilities = {
 			full_punch_interval = 1.0,

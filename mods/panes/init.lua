@@ -79,7 +79,9 @@ function panes.register_pane(subname, description, hsl, inputrecipename, groups_
 	end
 end
 
-panes.register_bars(nil, 'copper', 'Copper bars', ccoppert, 'default:copper_ingot')
-panes.register_bars(nil, 'steel', 'Steel bars', csteelt, 'default:steel_ingot')
+local ll = LA('panes')
 
-panes.register_pane('glass', 'Glass pane', ':0:0:0', 'default:glass')
+panes.register_bars(nil, 'copper', ll('Copper bars'), ccoppert, 'default:copper_ingot')
+panes.register_bars(nil, 'steel', ll('Steel bars'), csteelt, 'default:steel_ingot')
+
+panes.register_pane('glass', ll('Glass pane'), ':0:0:0', 'default:glass')

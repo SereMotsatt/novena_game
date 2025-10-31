@@ -33,20 +33,20 @@ damasco_t = 'default_damascus_pattrn.png^[hsl:0:0:25'
 materials.register_material(nil, "steel", "Steel", csteelt)
 materials.register_material(nil, "copper", "Copper", ccoppert)
 materials.register_material(nil, "gold", "Gold", cgoldt)
-materials.register_material(nil, "damascus_steel", "Damascus Steel", csteelt, damasco_b_t)
+materials.register_material(nil, "damascus_steel", "Damascus steel", csteelt, damasco_b_t)
 materials.register_material(nil, "mesite", "Mesite", cmesitet, nil, 8)
 
 --
 -- Register Tools
 --
 
-tools.register_tools("wood", "Wooden", cwoodt, 1.40, 5)
-tools.register_tools("stone", "Stone", cstonet, 1.00, 12)
-tools.register_tools("steel", "Steel", csteelt, 0.60, 20)
-tools.register_tools("copper", "Copper", ccoppert, 0.80, 15)
-tools.register_tools("gold", "Gold", cgoldt, 0.70, 10)
-tools.register_tools("damascus_steel", "Damascus Steel", csteelt, 0.55, 40, damasco_t)
-tools.register_tools("mesite", "Mesite", cmesitet, 0.45, 35)
+tools.register_tools("wood", "Wooden", cwoodt, 1.40, 10)
+tools.register_tools("stone", "Stone", cstonet, 1.00, 20)
+tools.register_tools("steel", "Steel", csteelt, 0.60, 30)
+tools.register_tools("copper", "Copper", ccoppert, 0.80, 25)
+tools.register_tools("gold", "Gold", cgoldt, 0.70, 20)
+tools.register_tools("damascus_steel", "Damascus steel", csteelt, 0.55, 70, damasco_t)
+tools.register_tools("mesite", "Mesite", cmesitet, 0.45, 60)
 
 --
 -- Register Crafts Of Tools

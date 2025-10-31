@@ -71,7 +71,7 @@ for i = 1, 3 do
 			octaves = 2,
 			persist = 1.0
 		},
-		y_max = 30,
+		y_max = 500,
 		y_min = 1,
 		decoration = "sxmsecondload:grass_"..i,
 	})

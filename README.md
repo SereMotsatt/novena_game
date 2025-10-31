@@ -24,8 +24,8 @@ Ve al ultimo lanzamiento de este repositorio y descargue la ultima version (Pres
 Copie el archivo descargado y vaya a donde descomprimió luanti y cree una carpeta llamada "games".
 Dentro de esa carpeta pegará el archivo descargado y lo descomprimirá.
 
-Tiene que quedar algo así (games/novena_game-0.0.2).
-Ahora tendrá que renombrar la carpeta "novena_game-0.0.2" a "novena_game" y estará listo.
+Tiene que quedar algo así (games/novena_game-0.0.4.0).
+Ahora tendrá que renombrar la carpeta "novena_game-0.0.4.0" a "novena_game" y estará listo.
 
 ### Paso 4
 A disfrutarlo... o por lo menos probarlo, recuerde que este juego está en progreso.

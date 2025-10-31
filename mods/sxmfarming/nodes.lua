@@ -1,8 +1,10 @@
 
+local ll = LA('sxmfarming')
+
 -- FARMLAND BLOCK
 
 minetest.register_node("sxmfarming:dry_farmland", {
-	description = "Dry Farmland",
+	description = ll("Dry farmland"),
 	tiles ={"sxmfarming_farmland.png", "default_dirt.png", "default_dirt.png"},
 	is_ground_content = true,
 	groups = {crumbly=3, soil=1},
@@ -13,7 +15,7 @@ minetest.register_node("sxmfarming:dry_farmland", {
 })
 
 minetest.register_node("sxmfarming:wet_farmland", {
-	description = "Wet farmland",
+	description = ll("Wet farmland"),
 	tiles ={"sxmfarming_farmland.png^[hsl:0:-10:-40", "default_dirt.png", "default_dirt.png"},
 	is_ground_content = true,
 	groups = {crumbly=3, soil=1},

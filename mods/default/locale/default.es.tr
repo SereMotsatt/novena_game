@@ -1,0 +1,107 @@
+# textdomain: default
+Wooden axe=Hacha de madera
+Stone axe=Hacha de piedra
+Steel axe=Hacha de acero
+Gold axe=Hacha de oro
+Copper axe=Hacha de cobre
+Damascus steel axe=Hacha de acero de damasco
+Mesite axe=Hacha de mesita
+
+Wooden pickaxe=Pico de madera
+Stone pickaxe=Pico de piedra
+Steel pickaxe=Pico de acero
+Gold pickaxe=Pico de oro
+Copper pickaxe=Pico de cobre
+Damascus steel pickaxe=Pico de acero de damasco
+Mesite pickaxe=Pico de mesita
+
+Wooden sword=Espada de madera
+Stone sword=Espada de piedra
+Steel sword=Espada de acero
+Gold sword=Espada de oro
+Copper sword=Espada de cobre
+Damascus steel sword=Espada de acero de damasco
+Mesite sword=Espada de mesita
+
+Wooden shovel=Pala de madera
+Stone shovel=Pala de piedra
+Steel shovel=Pala de acero
+Gold shovel=Pala de oro
+Copper shovel=Pala de cobre
+Damascus steel shovel=Pala de acero de damasco
+Mesite shovel=Pala de mesita
+
+###MoreAutomateds###
+Steel block=Bloque de acero
+Gold block=Bloque de oro
+Copper block=Bloque de cobre
+Damascus steel block=Bloque de acero de damasco
+Mesite block=Bloque de mesita
+
+Steel ingot=Lingote de acero
+Gold ingot=Lingote de oro
+Copper ingot=Lingote de cobre
+Damascus steel ingot=Lingote de acero de damasco
+Mesite ingot=Lingote de mesita
+
+Steel nugget=Pepita de acero
+Gold nugget=Pepita de oro
+Copper nugget=Pepita de cobre
+Damascus steel nugget=Pepita de acero de damasco
+Mesite nugget=Pepita de Mesita
+
+
+###More###
+Apple=Manzana
+Book=Libro
+Dirt=Tierra
+Dirt with grass=Tierra con pasto
+Sand=Arena
+Stone=Piedra
+Dirt with marshy grass=Tierra con pasto pantanoso
+Marshy dirt=Tierra pantanosa
+Bookshelf=Libreria
+Brick=Bloque de ladrillos
+Wood=Madera
+Tree=Tronco
+Furnace=Horno
+Gravel=Grava
+Glass=Vidrio
+Ladder=Escaleras de mano
+Leaves=Hojas
+Papyrus=Caña
+Paper=Papel
+Sapling=Arbolito
+Torch=Antorcha
+Lump of clay=Pedazo de arcilla
+Lump of coal=Pedazo de carbon
+Lump of iron=Pedazo de hierro
+Rail=Carril
+Stone with coal=Piedra con carbon
+Stone with iron=Piedra con hierro
+Stone with copper=Piedra con cobre
+Stone with mesite=Piedra con mesita
+Stone with gold=Piedra con oro
+Chest=Cobre
+Locked chest=Cobre bloqueado
+Stick=Palo
+Sign=Letrero
+Clay=Arcilla
+Wooden fence=Cerca de madera
+Sandstone=Arenisca
+Clay brick=Ladrillo
+
+
+###MoremorE###
+Stone smooth=Piedra suave
+Stone brick=Ladrillos de piedra
+Stone brick mossy=Ladrillos de piedra musgosos
+Stone pillar=Pilares de piedra
+Stone pillar edge=Bordes de pilares de piedra
+Cutter=Cortador
+Copper ladder=Escaleras de cobre de mano
+Copper ladder with mesite=Escaleras de cobre luminosas de mano
+Sheet steel=Laminas de acero
+Lantern=Farol
+Copper fence=Cerca de cobre
+Steel fence=Cerca de hierro

@@ -3,8 +3,8 @@ function register_oxidation(node, next_node)
 
 	minetest.register_abm({
 		nodenames = {node},
-		interval = 3.0,
-		chance = 1,
+		interval = 900, --15min
+		chance = 25, --75%
 		action = function(pos, node)
 			local new_node = next_node
 			local current_param2 = node.param2

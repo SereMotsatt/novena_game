@@ -2,7 +2,7 @@
 --
 -- ABM Helper
 --
-
+local ll = LA('sxmfarming')
 function sxmfarming.check_water_in_radius(radius, actualpos)
 	for x1 = -radius, radius do 
 			for z1 = -radius, radius do 
@@ -19,7 +19,7 @@ end
 function sxmfarming.farming_abm_node_from_to(name1, name2)
 
 	minetest.register_abm({
-		interval = 25.0,
+		interval = 60.0,
 		chance = 2,
 		nodenames = {name1},
 		action = function(pos, node)
@@ -41,7 +41,8 @@ local function hoe_place(itemstack, user, pointed_thing, uses)
 	if pointed_thing.type ~= 'node' then return itemstack end
 	local pt_pos = pointed_thing.under
 	local pt_name = minetest.get_node(pt_pos).name
-	if pt_name == 'default:dirt' or pt_name == 'default:dirt_with_grass' then
+	-- Tengo que mejorar esto posiblemente usando 'GROUPS'
+	if pt_name == 'default:dirt' or pt_name == 'default:dirt_with_grass' or pt_name == 'default:marshy_dirt' or pt_name == 'default:dirt_with_marshy_grass' then
 		minetest.set_node(pt_pos, minetest.registered_nodes['sxmfarming:dry_farmland'])
 		itemstack:add_wear_by_uses(uses)
 	end
@@ -63,7 +64,7 @@ end
 function sxmfarming.register_hoe(subname, name, recipe_item, hsl, uses, add_image)
 	if add_image == nil then add_image = '' else add_image = '^[mask:'..add_image end
 	minetest.register_tool("sxmfarming:hoe_"..subname, {
-		description = name .. " hoe",
+		description = ll(name .. " hoe"),
 		inventory_image = "default_tool_base.png^(sxmfarming_tool_hoe_base.png^[hsl"..hsl..add_image..")",
 		tool_capabilities = {
 			max_drop_level=0,

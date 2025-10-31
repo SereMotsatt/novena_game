@@ -1,7 +1,7 @@
 
 
 
-minetest.register_node("default:lantern", {
+dft.register_node("default:lantern", {
 	description = "Lantern",
 	drawtype = "nodebox",
 	tiles = {"default_lantern_top.png","default_lantern_bottom.png","default_lantern_side.png"},
@@ -41,13 +41,13 @@ minetest.register_craft({
 
 -- Steel Complements
 
-minetest.register_craftitem("default:sheet_steel", {
-	description = "Sheet Steel",
+dft.register_craftitem("default:sheet_steel", {
+	description = "Sheet steel",
 	inventory_image = "default_sheet_steel.png",
 })
 
-minetest.register_node("default:fence_steel", {
-	description = "Steel Fence",
+dft.register_node("default:fence_steel", {
+	description = "Steel fence",
 	drawtype = "fencelike",
 	tiles = {'default_blockauto_base.png^[hsl'..csteelt},
 	inventory_image = 'default_fence_white_base.png^[hsl'..csteelt,
@@ -74,8 +74,8 @@ minetest.register_craft({
 
 -- Copper Complements
 
-minetest.register_node("default:copper_ladder", {
-	description = "Copper Ladder",
+dft.register_node("default:copper_ladder", {
+	description = "Copper ladder",
 	drawtype = "signlike",
 	tiles ={"default_copper_ladder.png"},
 	inventory_image = "default_copper_ladder.png",
@@ -96,8 +96,8 @@ minetest.register_node("default:copper_ladder", {
 	sounds = default.node_sound_wood_defaults(), --change this
 })
 
-minetest.register_node("default:copper_ladder_with_mesite", {
-	description = "Copper Ladder with mesite",
+dft.register_node("default:copper_ladder_with_mesite", {
+	description = "Copper ladder with mesite",
 	drawtype = "signlike",
 	tiles ={"default_copper_ladder_wm.png"},
 	inventory_image = "default_copper_ladder_wm.png",
@@ -119,8 +119,8 @@ minetest.register_node("default:copper_ladder_with_mesite", {
 	sounds = default.node_sound_wood_defaults(), --change this
 })
 
-minetest.register_node("default:fence_copper", {
-	description = "Copper Fence",
+dft.register_node("default:fence_copper", {
+	description = "Copper fence",
 	drawtype = "fencelike",
 	tiles = {'default_blockauto_base.png^[hsl'..ccoppert},
 	inventory_image = 'default_fence_white_base.png^[hsl'..ccoppert,
@@ -163,7 +163,7 @@ minetest.register_craft({
 
 -- Stone
 
-minetest.register_node("default:stone_smooth", {
+dft.register_node("default:stone_smooth", {
 	description = "Stone smooth",
 	tiles = {'default_stone_smooth.png'},
 	is_ground_content = false,
@@ -171,7 +171,7 @@ minetest.register_node("default:stone_smooth", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:stone_brick", {
+dft.register_node("default:stone_brick", {
 	description = "Stone brick",
 	tiles = {'default_stone_brick.png'},
 	is_ground_content = false,
@@ -181,7 +181,7 @@ minetest.register_node("default:stone_brick", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:stone_brick_moosy", {
+dft.register_node("default:stone_brick_moosy", {
 	description = "Stone brick mossy",
 	tiles = {'default_stone_brick_mossy.png'},
 	is_ground_content = false,
@@ -191,7 +191,7 @@ minetest.register_node("default:stone_brick_moosy", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:stone_pillar", {
+dft.register_node("default:stone_pillar", {
 	description = "Stone pillar",
 	tiles = {'default_stone_pillar_top.png', 'default_stone_pillar_top.png', 'default_stone_pillar.png'},
 	is_ground_content = false,
@@ -200,7 +200,7 @@ minetest.register_node("default:stone_pillar", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:stone_pillar_edge", {
+dft.register_node("default:stone_pillar_edge", {
 	description = "Stone pillar edge",
 	tiles = {'default_stone_pillar_top.png', 'default_stone_pillar_top.png', 'default_stone_pillar_edge.png'},
 	is_ground_content = false,
@@ -229,7 +229,7 @@ minetest.register_craft({
 -- NECESITO MEJORAR ESTE CODIGO JAJAAJAJAJAJAJA, ES QUE NO ENTENDI EL 'lua_api.md'
 
 
-core.register_node('default:cutter', {
+dft.register_node('default:cutter', {
 	description = "Cutter",
 	tiles = {'default_stone_smooth.png'},
 	drawtype = "nodebox",
