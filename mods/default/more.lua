@@ -343,4 +343,53 @@ register_cutter('default:stone', 'default:stone_pillar')
 register_cutter('default:stone', 'default:stone_pillar_edge')
 register_cutter('default:cobble', 'default:stone_brick')
 register_cutter('default:cobble', 'default:stone_smooth')
-register_cutter('default:tree', 'default:wood 6')
+register_cutter('default:apple_tree', 'default:wood 6')
+
+dft.register_node("default:fern", {
+	description = "Fern",
+	drawtype = "plantlike",
+	tiles = {"default_fern.png"},
+	inventory_image = "default_fern.png",
+	wield_image = "default_fern.png",
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = 'fixed',
+		fixed = {{-0.37,-0.5,-0.37,0.37,0.10,0.37}},
+	},
+	groups = {snappy=3,attached_node=1},
+	sounds = default.node_sound_leaves_defaults(),
+})
+
+--
+-- More trees
+--
+
+-- Oak tree
+
+
+dft.register_node("default:oak_tree", {
+	description = "Oak tree",
+	tiles = {"default_oak_tree_top.png", "default_oak_tree_top.png", "default_oak_tree.png"},
+	is_ground_content = true,
+	groups = {snappy=2,choppy=2,oddly_breakable_by_hand=1},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+
+dft.register_node("default:oak_leaves", {
+	description = "Oak leaves",
+	drawtype = "glasslike",
+	tiles = {"default_oak_leaves.png"},
+	paramtype = "light",
+	walkable = false,
+	move_resistance = 1,
+	groups = {snappy=3},
+	sounds = default.node_sound_leaves_defaults(),
+	after_place_node = function(pos, placer, itemstack, pointed_thing)
+		local new_node = minetest.get_node(pos)
+		new_node.param2 = 1
+		minetest.set_node(pos, new_node)
+		--minetest.remove_node(pos)
+	end,
+})

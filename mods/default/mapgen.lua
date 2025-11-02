@@ -5,8 +5,8 @@
 --
 
 minetest.register_alias("mapgen_stone", "default:stone")
-minetest.register_alias("mapgen_tree", "default:tree")
-minetest.register_alias("mapgen_leaves", "default:leaves")
+minetest.register_alias("mapgen_tree", "default:apple_tree")
+minetest.register_alias("mapgen_leaves", "default:apple_leaves")
 minetest.register_alias("mapgen_apple", "default:apple")
 minetest.register_alias("mapgen_water_source", "default:water_source")
 minetest.register_alias("mapgen_dirt", "default:dirt")
@@ -189,6 +189,8 @@ minetest.register_ore({
 --
 -- No para mg v6
 --
+--Rediseñar esto
+if default.mg_get_name ~= "v6" then
 
 core.register_biome({
 	name = 'grasslands',
@@ -213,12 +215,37 @@ core.register_biome({
 	y_max = 2,
     y_min = -100,
     heat_point = 50,
-	weight = 1.0,
     humidity_point = 50,
 })
 
---Rediseñar esto
-if default.mg_get_name ~= "v6" then
+core.register_biome({
+	name = 'temperate_forest',
+	node_top = 'default:dirt_with_grass',
+    depth_top = 1,
+	node_filler = 'default:dirt',
+	depth_filler = 3,
+    node_stone = "default:stone",
+	y_max = 200,
+    y_min = 3,
+    heat_point = 30,
+    humidity_point = 70,
+})
+
+core.register_biome({
+	name = 'temperate_forest_ocean',
+	node_top = 'default:sand',
+    depth_top = 1,
+	node_filler = 'default:sand',
+	depth_filler = 2,
+    node_stone = "default:stone",
+	y_max = 2,
+    y_min = -100,
+    heat_point = 30,
+	weight = 1.0,
+    humidity_point = 70,
+})
+
+
 core.register_biome({
 	name = 'swamp',
 	node_top = 'default:dirt_with_marshy_grass',
@@ -246,6 +273,77 @@ core.register_biome({
     heat_point = 70,
 	weight = 2.0,
     humidity_point = 80,
+})
+
+end
+
+
+if default.mg_get_name ~= "v6" then
+core.register_decoration({
+	name = "default:apple_tree",
+	deco_type = "schematic",
+	place_on = "default:dirt_with_grass",
+    sidelen = 16,
+    fill_ratio = 0.02,
+    noise_params = {
+        offset = 0,
+        scale = 0.025,
+        spread = {x = 100, y = 100, z = 100},
+        seed = 354,
+        octaves = 3,
+        persistence = 0.7,
+        lacunarity = 2.0,
+        flags = "absvalue"
+    },
+    biomes = {"temperate_forest"},
+    y_min = 1,
+    y_max = 500,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    schematic = "schematics/manzano.mts",
+})
+
+core.register_decoration({
+	name = "default:oak_tree",
+	deco_type = "schematic",
+	place_on = "default:dirt_with_grass",
+    sidelen = 16,
+    fill_ratio = 0.02,
+    noise_params = {
+        offset = 0,
+        scale = 0.035,
+        spread = {x = 100, y = 100, z = 100},
+        seed = 556,
+        octaves = 2,
+        persistence = 0.7,
+        lacunarity = 2.0,
+        flags = "absvalue"
+    },
+    biomes = {"temperate_forest"},
+    y_min = 1,
+    y_max = 500,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    schematic = "schematics/roble.mts",
+})
+
+core.register_decoration({
+	name = "default:fern",
+	deco_type = "simple",
+	place_on = {"default:dirt_with_grass"},
+	sidelen = 16,
+	noise_params = {
+		offset = 0,
+		scale = 0.075,
+		spread = {x = 300, y = 300, z = 300},
+		seed = 235,
+		octaves = 2,
+		persist = 0.7
+	},
+	biomes = {"temperate_forest"},
+	y_max = 500,
+	y_min = 1,
+	decoration = "default:fern",
 })
 
 end

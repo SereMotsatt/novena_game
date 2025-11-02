@@ -16,7 +16,7 @@ end
 
 
 minetest.register_abm({
-	nodenames = {"default:leaves"},
+	nodenames = {"default:apple_leaves"},
 	interval = 1.0,
 	chance = 25,
 	action = function(pos, node)
@@ -24,7 +24,24 @@ minetest.register_abm({
 			--minetest.chat_send_player('singleplayer', 'a')
 			local node_bottom = minetest.get_node({x=pos.x, y=pos.y-1, z=pos.z}).name
 			if node_bottom == 'air' then 
-				local is_check = default.check_a_node_in_radius('default:tree', 4, pos)
+				local is_check = default.check_a_node_in_radius('default:apple_tree', 4, pos)
+				if is_check == false then minetest.spawn_falling_node(pos) end
+			end
+		end
+	end
+})
+
+
+minetest.register_abm({
+	nodenames = {"default:oak_leaves"},
+	interval = 1.0,
+	chance = 25,
+	action = function(pos, node)
+		if node.param2 == 0 then
+			--minetest.chat_send_player('singleplayer', 'a')
+			local node_bottom = minetest.get_node({x=pos.x, y=pos.y-1, z=pos.z}).name
+			if node_bottom == 'air' then 
+				local is_check = default.check_a_node_in_radius('default:oak_tree', 6, pos)
 				if is_check == false then minetest.spawn_falling_node(pos) end
 			end
 		end

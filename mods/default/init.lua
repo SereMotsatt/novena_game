@@ -26,9 +26,13 @@ function dft.register_craftitem(named, ref)
 	core.register_craftitem(named, ref)
 end
 
+minetest.register_alias("default:tree", "default:apple_tree")
+minetest.register_alias("default:leaves", "default:apple_leaves")
+
+
 default.mg_get_name = core.get_mapgen_setting("mg_name")
--- Stage (Alpha, Beta, Release), Big update, Small update, Bugfix. 
-default.version = "0.0.4.0"
+-- Stage (Alpha, Beta, Release), Big update, Small update, Very small update - Bugfix. 
+default.version = "0.0.4.11"
 
 -- Mi annadicion
 LA = core.get_translator --Lo mas innecesario que veras hoy :C
@@ -88,7 +92,7 @@ end)
 minetest.register_craft({
 	output = 'default:wood 4',
 	recipe = {
-		{'default:tree'},
+		{'default:apple_tree'},
 	}
 })
 
@@ -365,7 +369,7 @@ minetest.register_craft({
 minetest.register_craft({
 	type = "cooking",
 	output = "default:coal_lump",
-	recipe = "default:tree",
+	recipe = "default:apple_tree",
 })
 
 minetest.register_craft({
@@ -394,7 +398,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "fuel",
-	recipe = "default:tree",
+	recipe = "default:apple_tree",
 	burntime = 30,
 })
 
@@ -412,7 +416,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "fuel",
-	recipe = "default:leaves",
+	recipe = "default:apple_leaves",
 	burntime = 1,
 })
 
@@ -643,8 +647,8 @@ dft.register_node("default:brick", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-dft.register_node("default:tree", {
-	description = "Tree",
+dft.register_node("default:apple_tree", {
+	description = "Apple tree",
 	tiles ={"default_tree_top.png", "default_tree_top.png", "default_tree.png"},
 	is_ground_content = true,
 	groups = {snappy=2,choppy=2,oddly_breakable_by_hand=1},
@@ -672,12 +676,14 @@ dft.register_node("default:junglegrass", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-dft.register_node("default:leaves", {
-	description = "Leaves",
+dft.register_node("default:apple_leaves", {
+	description = "Apple leaves",
 	drawtype = "glasslike",
 	tiles ={"default_leaves.png"},
 	paramtype = "light",
 	param2 = 0,
+	walkable = false,
+	move_resistance = 1,
 	groups = {snappy=3},
 	drop = {
 		max_items = 1,
@@ -690,7 +696,7 @@ dft.register_node("default:leaves", {
 			{
 				-- player will get leaves only if he get no saplings,
 				-- this is because max_items is 1
-				items = {'default:leaves'},
+				items = {'default:apple_leaves'},
 			}
 		}
 	},
@@ -1342,8 +1348,8 @@ dft.register_node("default:apple", {
 
 local c_air = minetest.get_content_id("air")
 local c_ignore = minetest.get_content_id("ignore")
-local c_tree = minetest.get_content_id("default:tree")
-local c_leaves = minetest.get_content_id("default:leaves")
+local c_tree = minetest.get_content_id("default:apple_tree")
+local c_leaves = minetest.get_content_id("default:apple_leaves")
 local c_apple = minetest.get_content_id("default:apple")
 
 uploadfile('abm')
@@ -1514,8 +1520,8 @@ dft.register_craftitem("default:scorched_stuff", {
 
 minetest.register_alias("mapgen_air", "air")
 minetest.register_alias("mapgen_stone", "default:stone")
-minetest.register_alias("mapgen_tree", "default:tree")
-minetest.register_alias("mapgen_leaves", "default:leaves")
+minetest.register_alias("mapgen_tree", "default:apple_tree")
+minetest.register_alias("mapgen_leaves", "default:apple_leaves")
 minetest.register_alias("mapgen_apple", "default:apple")
 minetest.register_alias("mapgen_water_source", "default:water_source")
 minetest.register_alias("mapgen_dirt", "default:dirt")
